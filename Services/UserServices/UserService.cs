@@ -1,5 +1,4 @@
 using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using uni.Data;
 using uni.Dtos;
@@ -28,9 +27,12 @@ namespace uni.Services.UserServices
             var serviceResponse = new ServiceResponse<User>();
 
             var user = await _context.Users.FindAsync(id);
-            if(user != null){
+            if (user != null)
+            {
                 serviceResponse.Data = user;
-            }else {
+            }
+            else
+            {
                 serviceResponse.Success = false;
                 serviceResponse.Message = "User doesnt exist";
             }

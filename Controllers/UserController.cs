@@ -17,7 +17,7 @@ namespace uni.Controllers
             return Ok(await _userService.GetUsers());
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
             return Ok(await _userService.GetUser(id));

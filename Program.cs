@@ -22,8 +22,14 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage();
+}
+else
+{
+    app.UseExceptionHandler("/error");
 }
 
+app.MapGet("/error", () => Results.Problem());
 app.UseHttpsRedirection();
 app.MapControllers();
 
