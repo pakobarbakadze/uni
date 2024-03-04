@@ -11,10 +11,16 @@ namespace uni.Controllers
     {
         private readonly IStudentService _studentService = studentService;
 
-        [HttpGet]
+        [HttpGet("GetAll")]
         public async Task<ActionResult<List<Student>>> GetStudents()
         {
             return Ok(await _studentService.GetStudents());
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<Student>> GetStudent(int id)
+        {
+            return Ok(await _studentService.GetStudent(id));
         }
 
         [HttpPost]
