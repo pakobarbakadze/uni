@@ -1,6 +1,6 @@
 namespace uni.Entities
 {
-    public class Student
+    public class User
     {
         public int Id { get; set; }
         public required string FirstName { get; set; }

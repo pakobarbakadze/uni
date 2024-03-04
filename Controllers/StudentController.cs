@@ -1,32 +1,32 @@
 using Microsoft.AspNetCore.Mvc;
 using uni.Dtos;
 using uni.Entities;
-using uni.Services.StudentServices;
+using uni.Services.UserServices;
 
 namespace uni.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class StudentController(IStudentService studentService) : ControllerBase
+    public class UserController(IUserService userService) : ControllerBase
     {
-        private readonly IStudentService _studentService = studentService;
+        private readonly IUserService _userService = userService;
 
         [HttpGet("GetAll")]
-        public async Task<ActionResult<List<Student>>> GetStudents()
+        public async Task<ActionResult<List<User>>> GetUsers()
         {
-            return Ok(await _studentService.GetStudents());
+            return Ok(await _userService.GetUsers());
         }
 
         [HttpGet]
-        public async Task<ActionResult<Student>> GetStudent(int id)
+        public async Task<ActionResult<User>> GetUser(int id)
         {
-            return Ok(await _studentService.GetStudent(id));
+            return Ok(await _userService.GetUser(id));
         }
 
         [HttpPost]
-        public async Task<ActionResult<Student>> AddStudent(AddStudentDto addStudentDto)
+        public async Task<ActionResult<User>> AddUser(AddUserDto addUserDto)
         {
-            return Ok(await _studentService.AddStudent(addStudentDto));
+            return Ok(await _userService.AddUser(addUserDto));
         }
     }
 }

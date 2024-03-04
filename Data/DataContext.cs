@@ -13,6 +13,6 @@ namespace uni.Data
             optionsBuilder.UseNpgsql(connectionString);
         }
 
-        public DbSet<Student> Students { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

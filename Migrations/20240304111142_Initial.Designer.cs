@@ -11,7 +11,7 @@ using uni.Data;
 namespace uni.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240304075900_Initial")]
+    [Migration("20240304111142_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -24,7 +24,7 @@ namespace uni.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("uni.Entities.Student", b =>
+            modelBuilder.Entity("uni.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -46,7 +46,7 @@ namespace uni.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Students");
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }
