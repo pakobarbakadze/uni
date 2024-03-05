@@ -8,7 +8,7 @@ namespace uni
     {
         public AutoMapperProfile()
         {
-            CreateMap<AddUserDto, User>();
+            CreateMap<AddUserDTO, User>();
         }
     }
 }

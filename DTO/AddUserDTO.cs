@@ -1,6 +1,6 @@
 namespace uni.Dtos
 {
-    public class AddUserDto
+    public class AddUserDTO
     {
         public required string FirstName { get; set; }
         public required string LastName { get; set; } = string.Empty;

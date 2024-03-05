@@ -40,11 +40,11 @@ namespace uni.Services.UserServices
             return serviceResponse;
         }
 
-        public async Task<ServiceResponse<User>> AddUser(AddUserDto addUserDto)
+        public async Task<ServiceResponse<User>> AddUser(AddUserDTO addUserDTO)
         {
             var serviceResponse = new ServiceResponse<User>();
 
-            var user = _mapper.Map<User>(addUserDto);
+            var user = _mapper.Map<User>(addUserDTO);
 
             _context.Users.Add(user);
             await _context.SaveChangesAsync();

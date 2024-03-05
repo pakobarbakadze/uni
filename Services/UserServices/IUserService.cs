@@ -8,6 +8,6 @@ namespace uni.Services.UserServices
     {
         Task<ServiceResponse<List<User>>> GetUsers();
         Task<ServiceResponse<User>> GetUser(int id);
-        Task<ServiceResponse<User>> AddUser(AddUserDto addUserDto);
+        Task<ServiceResponse<User>> AddUser(AddUserDTO addUserDTO);
     }
 }

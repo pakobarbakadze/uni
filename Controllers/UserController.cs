@@ -24,9 +24,9 @@ namespace uni.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<User>> AddUser(AddUserDto addUserDto)
+        public async Task<ActionResult<User>> AddUser(AddUserDTO addUserDTO)
         {
-            return Ok(await _userService.AddUser(addUserDto));
+            return Ok(await _userService.AddUser(addUserDTO));
         }
     }
 }
