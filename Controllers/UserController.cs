@@ -1,6 +1,6 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using uni.Dtos;
-using uni.Entities;
+using uni.Models;
 using uni.Services.UserServices;
 
 namespace uni.Controllers
@@ -12,6 +12,7 @@ namespace uni.Controllers
         private readonly IUserService _userService = userService;
 
         [HttpGet("GetAll")]
+        [Authorize]
         public async Task<ActionResult<List<User>>> GetUsers()
         {
             return Ok(await _userService.GetUsers());
@@ -21,12 +22,6 @@ namespace uni.Controllers
         public async Task<ActionResult<User>> GetUser(int id)
         {
             return Ok(await _userService.GetUser(id));
-        }
-
-        [HttpPost]
-        public async Task<ActionResult<User>> AddUser(AddUserDTO addUserDTO)
-        {
-            return Ok(await _userService.AddUser(addUserDTO));
         }
     }
 }

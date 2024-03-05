@@ -1,6 +1,4 @@
 using AutoMapper;
-using uni.Dtos;
-using uni.Entities;
 
 namespace uni
 {
@@ -8,7 +6,7 @@ namespace uni
     {
         public AutoMapperProfile()
         {
-            CreateMap<AddUserDTO, User>();
+            // CreateMap<AddUserDTO, User>();
         }
     }
 }

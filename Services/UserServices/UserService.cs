@@ -1,8 +1,5 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using uni.Data;
-using uni.Dtos;
-using uni.Entities;
 using uni.Models;
 
 namespace uni.Services.UserServices
@@ -36,19 +33,6 @@ namespace uni.Services.UserServices
                 serviceResponse.Success = false;
                 serviceResponse.Message = "User doesnt exist";
             }
-
-            return serviceResponse;
-        }
-
-        public async Task<ServiceResponse<User>> AddUser(AddUserDTO addUserDTO)
-        {
-            var serviceResponse = new ServiceResponse<User>();
-
-            var user = _mapper.Map<User>(addUserDTO);
-
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
-            serviceResponse.Data = user;
 
             return serviceResponse;
         }

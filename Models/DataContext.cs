@@ -1,18 +1,7 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using uni.Entities;
 
-namespace uni.Data
+namespace uni.Models
 {
-    public class DataContext(IConfiguration configuration) : DbContext()
-    {
-        private readonly IConfiguration _configuration = configuration;
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            string connectionString = _configuration.GetConnectionString("DatabaseConnection")!;
-            optionsBuilder.UseNpgsql(connectionString);
-        }
-
-        public DbSet<User> Users { get; set; }
-    }
+    public class DataContext(DbContextOptions<DataContext> options) : IdentityDbContext<User>(options) { }
 }

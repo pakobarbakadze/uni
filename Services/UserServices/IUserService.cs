@@ -1,5 +1,3 @@
-using uni.Dtos;
-using uni.Entities;
 using uni.Models;
 
 namespace uni.Services.UserServices
@@ -8,6 +6,5 @@ namespace uni.Services.UserServices
     {
         Task<ServiceResponse<List<User>>> GetUsers();
         Task<ServiceResponse<User>> GetUser(int id);
-        Task<ServiceResponse<User>> AddUser(AddUserDTO addUserDTO);
     }
 }
